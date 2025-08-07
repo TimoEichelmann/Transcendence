@@ -3,14 +3,11 @@ import {Navbar} from "./components/Navbar.js"
 export function Home(username : string | null) : HTMLElement
 {
 	const div = document.createElement("div");
-	const navbar = Navbar(username);
-	div.appendChild(navbar);
-
 	const main = document.createElement("div"); 
-	main.className = "ml-16 p-4";
+	main.className = "ml-18 p-4";
 
 	const title = document.createElement("h1");
-	title.className = "bg-blue-500 text-white p-4 rounded text-center font-extrabold text";
+	title.className = "bg-blue-500 text-white p-5 rounded text-center font-extrabold text";
 	title.textContent = "Welcome to 42 Transcendence!";
 	main.appendChild(title);
 

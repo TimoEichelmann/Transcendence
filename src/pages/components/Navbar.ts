@@ -13,6 +13,7 @@ export function Navbar(username: string | null): HTMLElement {
 	const topIcons = document.createElement("div");
 	topIcons.className = "flex flex-col items-center gap-5 mt-4";
 	
+
 	const home = Icon("home", 30, "black");
 	const play = Icon("play", 30, "black");
 	const tournament = Icon("tournament", 30, "black");
