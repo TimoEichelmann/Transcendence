@@ -2,7 +2,8 @@
 export function registerForm(username : string | null) : HTMLElement
 {
     const Register = document.createElement("div");
-
+	Register.className = "hidden";
+	Register.id = "registerForm";
 	const Title = document.createElement("h1");
     Title.textContent = "Register";
     Title.className = "text-3xl font-bold";
@@ -11,16 +12,16 @@ export function registerForm(username : string | null) : HTMLElement
      uname.textContent = "Username:";
 
 	 const dname = document.createElement("h2");
-     uname.textContent = "Displayname:";
+     dname.textContent = "Displayname:";
 
      const pword = document.createElement("h2");
      pword.textContent = "Password:";
 
      const rpword = document.createElement("h2");
-     pword.textContent = "Repeat Password:";
+     rpword.textContent = "Repeat Password:";
 
 	 const email = document.createElement("h2");
-     pword.textContent = "Email:";
+     email.textContent = "Email:";
 
      const uname_enter = document.createElement("input");
      uname_enter.type = "text";
@@ -52,4 +53,5 @@ export function registerForm(username : string | null) : HTMLElement
      submit.id = "Register";
 
 	 Register.append(Title, uname, uname_enter, dname, dname_enter, pword, pword_enter, rpword, rpword_enter, email, email_enter, submit);
-}
+		return Register;
+	}

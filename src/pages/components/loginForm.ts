@@ -2,6 +2,7 @@
 export function loginForm(username : string | null) : HTMLElement
 {
     const Login = document.createElement("div");
+	Login.id = "loginForm";
 
      const Title = document.createElement("h1");
     Title.textContent = "Login";
