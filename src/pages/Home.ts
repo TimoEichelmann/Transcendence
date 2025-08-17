@@ -4,8 +4,9 @@ export function Home(username : string | null) : HTMLElement
 {
 	const div = document.createElement("div");
 	const main = document.createElement("div"); 
-	main.className = "ml-18 p-4";
+	main.className = "p-4";
 
+	div.className = "z-10";
 	const title = document.createElement("h1");
 	title.className = "bg-blue-500 text-white p-5 rounded text-center font-extrabold text";
 	title.textContent = "Welcome to 42 Transcendence!";

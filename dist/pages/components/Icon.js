@@ -24,18 +24,19 @@ const toolTips = {
 };
 export function Icon(name, size = 24, color = "currentColor") {
     const wrapper = document.createElement("div");
+    const navbar = document.createElement("div");
     const hashlink = document.createElement("a");
     const tooltip = document.createElement("div");
     const svgNS = "http://www.w3.org/2000/svg";
     const svg = document.createElementNS(svgNS, "svg");
     hashlink.href = "#" + name;
     hashlink.dataset.route = "#" + name;
-    wrapper.className = `wrapper relative group w-14 h-14 
-                    bg-white hover:bg-amber-800 
+    navbar.className = `wrapper relative group w-14 h-14 
+                    bg-yellow-400 hover:bg-orange-400
                       rounded-3xl hover:rounded-xl
                       transition-all duration-300
                       flex items-center justify-center
-                    shadow-lg shadow-blue-600`;
+                    shadow-lg shadow-purple-950`;
     tooltip.textContent = toolTips[name];
     tooltip.className = `absolute left-full ml-2
                       pointer-events-none
@@ -55,8 +56,8 @@ export function Icon(name, size = 24, color = "currentColor") {
     path.setAttribute("stroke-width", "1.5");
     path.setAttribute("fill", "none");
     svg.appendChild(path);
-    wrapper.appendChild(svg);
-    wrapper.appendChild(tooltip);
-    hashlink.appendChild(wrapper);
+    navbar.appendChild(svg);
+    navbar.appendChild(tooltip);
+    hashlink.appendChild(navbar);
     return hashlink;
 }

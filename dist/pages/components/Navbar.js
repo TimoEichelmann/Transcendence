@@ -1,13 +1,20 @@
 import { Icon } from "./Icon.js";
 export function Navbar(username) {
     const nav = document.createElement("div");
+    const frame = document.createElement("div");
+    const app = document.createElement("div");
     nav.className =
         `fixed top-0 left-0 h-screen w-18
 	flex flex-col 
 	items-center justify-between
 	gap-6
 	p-2
-	bg-blue-300`;
+	ml-1
+	bg-purple-700`;
+    nav.id = "navbar";
+    app.id = "app";
+    frame.className = "flex h-screen w-screen bg-purple-700 p-6 z-0";
+    app.className = "border-4 border-purple-900 [box-shadow:inset_0_0_30px_rgba(0,0,0,0.9)] flex-1 h-full w-full ml-14  bg-gradient-to-b from-purple-400 to-purple-200 rounded-[2rem] overflow-auto";
     const topIcons = document.createElement("div");
     topIcons.className = "flex flex-col items-center gap-5 mt-4";
     const home = Icon("home", 30, "black");
@@ -24,5 +31,6 @@ export function Navbar(username) {
         bottomIcons.append(Icon("login", 30, "black"));
     }
     nav.append(topIcons, bottomIcons);
-    return nav;
+    frame.append(nav, app);
+    return frame;
 }
