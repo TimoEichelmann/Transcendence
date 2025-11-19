@@ -1,0 +1,56 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: pong-backend
+    expose:
+      - "3000"
+    environment:
+      DB_PATH: /db/sqlite.db
+      JWT_SECRET: ${JWT_SECRET} # add from .env
+      CORS_ORIGIN: ${CORS_ORIGIN} # add from .env
+      TOKEN_EXPIRES_IN: ${TOKEN_EXPIRES_IN} # add from .env
+    volumes:
+      - ./db:/db
+      - ./profile-images:/profile-images
+
+  nginx:
+    build: ./web
+    container_name: http-server
+    environment:
+      - NGINX_PORT=443
+    ports:
+      - "443:443"
+      #-"8000:8000"
+    # DO NOT mount ./web into /usr/share/nginx/html in production
+    # It will be done inside of Dockerfile
+    # when the do docker compose up --build
+    volumes:
+      - ./profile-images:/usr/share/nginx/html/profile-images
+    #   - ./web:/usr/share/nginx/html
+      - ./certs:/etc/nginx/certs:ro
+    depends_on:
+      - backend
+
+  # frontend:
+  #   build: ./frontend
+  #   container_name: pong-frontend
+  #   ports:
+  #     - "8080:80"
+  #   depends_on:
+  #     - backend
+
+  # pong:
+  #   image: ./pong_game
+  #   container_name: pong-game
+  #   ports:
+  #     - "5000:5000"
+  #   depends_on:
+  #     - backend
+
+  # database:
+  #   build: ./database
+  #   container_name : pong-db
+  #   volumes:
+  #     - db-data:/db
+  #   restart: always

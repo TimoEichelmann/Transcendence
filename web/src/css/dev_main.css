@@ -1,0 +1,14 @@
+@import "tailwindcss";
+@source "../pages/**/*.html";
+@source "../../index.html";
+@source "../scripts/**/*.js";
+@theme {
+  --color-bgdark: #8100da;
+  --color-bgnormal: #2a3e4c;
+  --color-bglight: #debcff;
+  --color-txthighlight: #ffffff;
+  --color-txt: #d4eafa;
+  --color-btnbg: #fdc700;
+  --color-btnbghover: #ff8904;
+  --color-btnbgselected: #fff085;
+}
