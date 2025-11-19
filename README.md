@@ -46,9 +46,9 @@ https://localhost
 ---
 
 ## Authors
-Timo Eichelmann
-[Dustin Wilke](https://github.com/LoneOne123)
-[Subin Park](https://github.com/subinprk)
-[Taka Nakajo](https://github.com/tnakajo42)
+Timo Eichelmann,
+[Dustin Wilke](https://github.com/LoneOne123),
+[Subin Park](https://github.com/subinprk),
+[Taka Nakajo](https://github.com/tnakajo42),
 [Carlos Denegri](https://github.com/cadenegr)
 
